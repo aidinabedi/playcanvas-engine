@@ -2002,7 +2002,6 @@ class WebglGraphicsDevice extends GraphicsDevice {
      * @param {number} h - The height of the rectangle, in pixels.
      * @param {ArrayBufferView} pixels - The ArrayBufferView object that holds the returned pixel
      * data.
-     * @ignore
      */
     readPixels(x, y, w, h, pixels) {
         const gl = this.gl;
@@ -2043,7 +2042,7 @@ class WebglGraphicsDevice extends GraphicsDevice {
      * @param {number} h - The height of the rectangle, in pixels.
      * @param {ArrayBufferView} pixels - The ArrayBufferView object that holds the returned pixel
      * data.
-     * @ignore
+     * @returns {ArrayBufferView} The same ArrayBufferView object that is passed as the pixels parameter.
      */
     async readPixelsAsync(x, y, w, h, pixels) {
         const gl = this.gl;
