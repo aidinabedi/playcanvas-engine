@@ -452,6 +452,11 @@ class Mesh extends RefCountedObject {
         const numBones = this.skin.boneNames.length;
         let maxMorphX, maxMorphY, maxMorphZ;
 
+        const numVerts = this.vertexBuffer.numVertices;
+        if (numVerts === 0) {
+            return;
+        }
+
         // start with empty bone bounds
         for (let i = 0; i < numBones; i++) {
             boneMin[i] = new Vec3(Number.MAX_VALUE, Number.MAX_VALUE, Number.MAX_VALUE);
@@ -465,7 +470,6 @@ class Mesh extends RefCountedObject {
         const indicesElement = iterator.element[SEMANTIC_BLENDINDICES];
 
         // Find bone AABBs of attached vertices
-        const numVerts = this.vertexBuffer.numVertices;
         for (let j = 0; j < numVerts; j++) {
             for (let k = 0; k < 4; k++) {
                 const boneWeight = weightsElement.array[weightsElement.index + k];
