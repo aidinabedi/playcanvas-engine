@@ -112,7 +112,6 @@ class AnimationComponentSystem extends ComponentSystem {
 
     /**
      * @param {number} dt - The time delta since the last frame.
-     * @private
      */
     onUpdate(dt) {
         const components = this.store;
