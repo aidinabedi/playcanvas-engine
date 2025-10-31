@@ -294,7 +294,6 @@ export class Script extends EventHandler {
      * Name of a Script Type.
      *
      * @type {string}
-     * @private
      */
     static __name = null; // Will be assigned when calling createScript or registerScript.
 
